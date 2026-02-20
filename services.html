@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Estrella Mentora</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            padding-top: calc(var(--space-xl) + 80px);
+            padding-bottom: var(--space-md);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(3rem, 5vw, 5rem);
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(250px, auto);
+            gap: 1.5rem;
+            margin-bottom: var(--space-xl);
+        }
+
+        .bento-item {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: var(--space-md);
+            transition: var(--trans-smooth);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bento-item:hover {
+            border-color: var(--accent-violet);
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Specific sizing */
+        .bento-large {
+            grid-column: span 3;
+            grid-row: span 2;
+            background: linear-gradient(135deg, rgba(8, 8, 8, 1) 0%, rgba(18, 18, 18, 1) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+
+        .bento-medium {
+            grid-column: span 1;
+            grid-row: span 2;
+            background: linear-gradient(to bottom, rgba(15, 15, 15, 1), rgba(5, 5, 5, 1));
+        }
+
+        .bento-small {
+            grid-column: span 2;
+        }
+
+        .bento-title {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .bento-large .bento-title {
+            font-size: 3rem;
+            color: var(--accent-violet);
+        }
+
+        .course-modules {
+            list-style: none;
+            margin-top: var(--space-md);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .course-modules li {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 2px solid var(--accent-violet);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--bg-color);
+        }
+
+        .testimonial-card {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #fff;
+        }
+
+        .testimonial-author {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-large {
+                grid-column: span 2;
+            }
+
+            .bento-medium {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .bento-small {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-small,
+            .bento-large,
+            .bento-medium {
+                grid-column: span 1;
+            }
+
+            .course-modules {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="container">
+        <nav>
+            <a href="index.html" class="logo audio-hover" aria-label="Estrella Inicio">Estrella</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="audio-hover">Inicio</a></li>
+                <li><a href="services.html" class="active audio-hover">Servicios</a></li>
+                <li><a href="about.html" class="audio-hover">Sobre Mí</a></li>
+                <li><a href="contact.html" class="audio-hover">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header container">
+            <h1>El Viaje de los Sentidos</h1>
+            <p style="margin: 0 auto; margin-top: 1rem; text-align: center;">Programas diseñados para reconectar con tu
+                esencia a través del sentir.</p>
+        </section>
+
+        <section class="container">
+            <div class="bento-grid">
+
+                <!-- Caja Grande -->
+                <a href="#contacto" class="bento-item bento-large audio-hover"
+                    aria-label="Curso Online: Despierta el poder de tus sentidos">
+                    <div>
+                        <span class="bento-tag">Programa Principal</span>
+                        <h2 class="bento-title">Despierta el poder de tus sentidos</h2>
+                        <p>Únete a este viaje transformacional de 8 semanas. Aprenderás a utilizar tus sentidos como
+                            anclas para el momento presente y motores de manifestación.</p>
+
+                        <ul class="course-modules" aria-hidden="true">
+                            <li><strong>Módulo 1:</strong> Energía y Presencia</li>
+                            <li><strong>Módulo 2:</strong> Hábitos Sensoriales</li>
+                            <li><strong>Módulo 3:</strong> Visualización Activa</li>
+                            <li><strong>Módulo 4:</strong> Manifestación desde el Sentir</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <span class="btn btn-secondary">Inscribirme a la lista de espera</span>
+                    </div>
+                </a>
+
+                <!-- Caja Mediana -->
+                <a href="#descarga" class="bento-item bento-medium audio-hover" aria-label="E-book Gratuito">
+                    <div>
+                        <span class="bento-tag">Recurso Gratuito</span>
+                        <h2 class="bento-title">Descubre tu propósito</h2>
+                        <p>Un manual práctico de 20 páginas con ejercicios básicos para empezar a limpiar el ruido
+                            mental.</p>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <span class="btn btn-primary" style="width: 100%; text-align: center;">Descargar Libre</button>
+                    </div>
+                </a>
+
+                <!-- Cajas Pequeñas -->
+                <a href="#yoga" class="bento-item bento-small audio-hover" aria-label="Kundalini Yoga">
+                    <span class="bento-tag">Práctica Corporal</span>
+                    <h2 class="bento-title" style="font-size: 1.5rem;">Kundalini Yoga</h2>
+                    <p>Clases online para desbloquear tu energía vital.</p>
+                </a>
+
+                <a href="#sonoterapia" class="bento-item bento-small audio-hover" aria-label="Sonoterapia">
+                    <span class="bento-tag">Terapia Vibracional</span>
+                    <h2 class="bento-title" style="font-size: 1.5rem;">Sonoterapia con Cuencos</h2>
+                    <p>Sesiones inmersivas para alinear tus frecuencias de forma profunda.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="text-align: center; margin-bottom: var(--space-lg); font-size: 2.5rem;">Voces que han sentido
+                    el cambio</h2>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"El programa de Estrella no me enseñó a ver más, me enseñó a sentir
+                        todo. Recuperé mi paz."</p>
+                    <p class="testimonial-author">— María V., Alumna del Programa</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"La sonoterapia con ella es un viaje a otra dimensión. Literalmente
+                        siento cómo el estrés abandona mi cuerpo."</p>
+                    <p class="testimonial-author">— Carlos T., Sesión Privada</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
